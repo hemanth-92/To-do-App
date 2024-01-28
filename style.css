@@ -1,8 +1,12 @@
 body {
-  background-color: #fe6f5e;
+  background-color: #06257b;
 }
+
 .container {
   max-width: 450px;
+}
+h1 {
+  color: #a020f0;
 }
 
 input[type="text"],
@@ -18,6 +22,9 @@ li.list-group-items {
   color: #000000;
   font-weight: 500;
   margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .delete {
@@ -33,20 +40,11 @@ label.add {
   margin-bottom: 15px;
 }
 
-.filterd {
-  display: none !important;
-}
-
 form hr {
   color: #ffffff;
 }
 
-li.list-group-item {
-  display: flex;
-  justify-content: space-between;
-}
-
-li.list-group-item:hover {
+li.list-group-items:hover {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }

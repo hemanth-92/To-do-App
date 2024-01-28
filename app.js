@@ -1,21 +1,42 @@
-const task = document.querySelector("#task");
-const btn = document.querySelector("#btn");
-const ul = document.querySelector("ul");
+const addForm = document.querySelector("form.add");
+const ul = document.querySelector("ul.todos");
+const searchFormInput = document.querySelector("form.search input");
 const message = document.querySelector(".message-container");
 
-//Add new todo
-
+//ADD NEW TODO
 const handleAddItem = (inputValue) => {
-  const html = `<li class="list-items">
-  <span>$(inputValue)</span>
-  <i class="fa-solid fa-trash"></i>
-</li>`;
-  ul.innerText += html;
+  const html = `
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span>${inputValue}</span>
+          <i class="far fa-trash-alt delete"></i>
+          </li>
+      `;
+  ul.innerHTML += html;
 };
 
-task.addEventListener("submit", (e) => {
+addForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const inputValue = task.add.value;
+  const inputValue = addForm.add.value;
   if (inputValue.length) handleAddItem(inputValue);
-  task.add.value = "";
+  addForm.add.value = "";
+
+  message.classList.toggle("success");
+  message.textContent = "Item Added";
+
+  setTimeout(() => {
+    message.classList.toggle("success");
+  }, 2000);
+});
+
+//REMOVE TODO
+ul.addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete")) {
+    e.target.parentElement.remove();
+  }
+  message.classList.toggle("error");
+  message.textContent = "Item Deleted";
+
+  setTimeout(() => {
+    message.classList.toggle("error");
+  }, 2000);
 });

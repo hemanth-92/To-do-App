@@ -17,28 +17,23 @@
   <body>
     <div class="container">
       <!-- Header-->
-      <header class="mb-4" text-light text-center>
-        <h1 class="mb-4">Your Todo List <img src="check.png" height="50px</h1>
-        <form>
-          <input
-            type="text"
-            class="m-auto form-control"
-            placeholder="search"
-            name="search"
-          />
-        </form>
+      <header class="mb-4 text-light text-center">
+        <h1 class="mb-4 title">
+          Your Todo List <img src="check.png" height="40px" />
+        </h1>
       </header>
 
       <!-- List-->
       <ul class="list-group todos mx-auto text-light">
         <li class="list-group-items">
-          <span>Dummy-Item</span>
+          <span>Dummy Task</span>
           <i class="far fa-trash-alt delete"></i>
         </li>
       </ul>
 
       <!--Form-->
-      <form>
+      <form class="add text-center my-4">
+        <hr />
         <label for="add" class="add text-light">Add new task</label>
         <input
           type="text"
