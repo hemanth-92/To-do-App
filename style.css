@@ -1,25 +1,113 @@
 body {
-  background-color: white;
+  background-color: #fe6f5e;
 }
-.box {
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
-  align-items: center;
+.container {
+  max-width: 450px;
 }
-.main {
-  height: 400px;
-  min-width: 100px;
-  border: 20px;
+
+input[type="text"],
+input[type="text"]:focus {
+  color: #fff;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
 }
-.list-items {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: auto;
+
+li.list-group-items {
+  pointer-events: none;
+  background-color: #f3eb09;
+  color: #000000;
+  font-weight: 500;
+  margin-bottom: 15px;
 }
-/* li {
+
+.delete {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.delete:hover {
+  color: red;
+}
+
+label.add {
+  margin-bottom: 15px;
+}
+
+.filterd {
+  display: none !important;
+}
+
+form hr {
+  color: #ffffff;
+}
+
+li.list-group-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-} */
+}
+
+li.list-group-item:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.message-container {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 2rem;
+  background-color: white;
+  padding: 20px;
+  transform: translateX(0);
+  visibility: hidden;
+  transition: transform 1s ease;
+}
+
+.success {
+  transform: translateX(100px);
+  visibility: visible;
+  background-color: rgb(34, 187, 51);
+  color: white;
+}
+
+.error {
+  transform: translateX(100px);
+  visibility: visible;
+  background-color: rgb(223, 71, 89);
+  color: #fff;
+}
