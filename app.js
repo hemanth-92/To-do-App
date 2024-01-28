@@ -1,43 +1,21 @@
-let form = document.querySelector("form");
-let input = document.querySelector("input");
-let output = document.querySelector(".output");
-let message = document.querySelector(".message-container");
+const task = document.querySelector("#task");
+const btn = document.querySelector("#btn");
+const ul = document.querySelector("ul");
+const message = document.querySelector(".message-container");
 
-function getTodo(value) {
-  let todo = document.createElement("div");
-  let textEl = document.createElement("span");
-  textEl.innerHTML = value;
-  todo.appendChild(textEl);
-  message.classList.toggle("success");
-  message.textContent = "Item Added";
+//Add new todo
 
-  setTimeout(() => {
-    message.classList.toggle("success");
-  }, 2000);
+const handleAddItem = (inputValue) => {
+  const html = `<li class="list-items">
+  <span>$(inputValue)</span>
+  <i class="fa-solid fa-trash"></i>
+</li>`;
+  ul.innerText += html;
+};
 
-  let closeEl = document.createElement("span");
-  closeEl.innerHTML = "&times;";
-  closeEl.classList.add("delete");
-
-  closeEl.addEventListener("click", () => {
-    output.removeChild(todo);
-    message.classList.toggle("error");
-    message.textContent = "Item Deleted";
-
-    setTimeout(() => {
-      message.classList.toggle("error");
-    }, 2000);
-  });
-
-  todo.appendChild(closeEl);
-  todo.classList.add("todo");
-  return todo;
-}
-
-form.addEventListener("submit", (e) => {
+task.addEventListener("submit", (e) => {
   e.preventDefault();
-  let value = input.value;
-  if (!value.trim()) return;
-  output.appendChild(getTodo(value));
-  input.value = "";
+  const inputValue = task.add.value;
+  if (inputValue.length) handleAddItem(inputValue);
+  task.add.value = "";
 });

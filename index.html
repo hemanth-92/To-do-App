@@ -1,21 +1,53 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
+    <title>T0 do App</title>
   </head>
   <body>
-    <section class="container">
+    <div class="container">
+      <!-- Header-->
+      <header class="mb-4" text-light text-center>
+        <h1 class="mb-4">Your Todo List <img src="check.png" height="50px</h1>
+        <form>
+          <input
+            type="text"
+            class="m-auto form-control"
+            placeholder="search"
+            name="search"
+          />
+        </form>
+      </header>
+
+      <!-- List-->
+      <ul class="list-group todos mx-auto text-light">
+        <li class="list-group-items">
+          <span>Dummy-Item</span>
+          <i class="far fa-trash-alt delete"></i>
+        </li>
+      </ul>
+
+      <!--Form-->
       <form>
-        <input type="text" placeholder="Enter a todo" />
+        <label for="add" class="add text-light">Add new task</label>
+        <input
+          type="text"
+          class="form-control mx-auto"
+          placeholder="Press Enter to Submit"
+          id="add"
+        />
       </form>
-      <div class="output"></div>
-    </section>
-
-    <div class="message-container">Item Deleted</div>
-
-    <script src="app.js"></script>
+    </div>
+    <div class="message-container">Item-message</div>
   </body>
 </html>
