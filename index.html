@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO DO APP</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"
@@ -12,34 +13,42 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>T0 do App</title>
   </head>
   <body>
     <div class="container">
-      <!-- Header-->
-      <header class="mb-4 text-light text-center">
-        <h1 class="mb-4 title">
+      <!--  HEADER  -->
+      <header class="text-center text-light my-4">
+        <h1 class="mb-4">
           Your Todo List <img src="check.png" height="40px" />
         </h1>
+        <form class="search">
+          <input
+            type="text"
+            class="form-control m-auto input"
+            name="search"
+            placeholder="Search"
+          />
+        </form>
       </header>
 
-      <!-- List-->
+      <!--  LIST  -->
       <ul class="list-group todos mx-auto text-light">
-        <li class="list-group-items">
+        <li class="list-group-item">
           <span>Dummy Task</span>
           <i class="far fa-trash-alt delete"></i>
         </li>
       </ul>
 
-      <!--Form-->
+      <!--  FORM  -->
       <form class="add text-center my-4">
         <hr />
-        <label for="add" class="add text-light">Add new task</label>
+        <label for="add" class="add text-light">Add a new task</label>
         <input
           type="text"
-          class="form-control mx-auto"
-          placeholder="Press Enter to Submit"
+          class="form-control m-auto"
+          name="add"
           id="add"
+          placeholder="Press Enter to Submit"
         />
       </form>
     </div>

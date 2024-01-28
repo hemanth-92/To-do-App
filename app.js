@@ -1,12 +1,12 @@
 const addForm = document.querySelector("form.add");
 const ul = document.querySelector("ul.todos");
-const searchFormInput = document.querySelector("form.search input");
+const searchFormInput = document.querySelector(".input");
 const message = document.querySelector(".message-container");
 
 //ADD NEW TODO
 const handleAddItem = (inputValue) => {
   const html = `
-      <li class="list-group-item d-flex justify-content-between align-items-center">
+      <li class="list-group-item">
           <span>${inputValue}</span>
           <i class="far fa-trash-alt delete"></i>
           </li>
@@ -25,7 +25,7 @@ addForm.addEventListener("submit", (e) => {
 
   setTimeout(() => {
     message.classList.toggle("success");
-  }, 2000);
+  }, 1000);
 });
 
 //REMOVE TODO
@@ -38,5 +38,23 @@ ul.addEventListener("click", (e) => {
 
   setTimeout(() => {
     message.classList.toggle("error");
-  }, 2000);
+  }, 1000);
+});
+
+searchFormInput.parentElement.addEventListener("submit", (e) =>
+  e.preventDefault()
+);
+
+//SEARCH AND FILTER TODOS
+const filterItems = (value) => {
+  Array.from(ul.children).forEach((li) => {
+    if (!li.textContent.toLowerCase().includes(value))
+      li.classList.add("filtred");
+    else li.classList.remove("filtred");
+  });
+};
+
+searchFormInput.addEventListener("keyup", (e) => {
+  const value = searchFormInput.value.toLowerCase().trim();
+  filterItems(value);
 });

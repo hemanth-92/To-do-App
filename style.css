@@ -5,9 +5,6 @@ body {
 .container {
   max-width: 450px;
 }
-h1 {
-  color: #a020f0;
-}
 
 input[type="text"],
 input[type="text"]:focus {
@@ -16,15 +13,12 @@ input[type="text"]:focus {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-li.list-group-items {
+li.list-group-item {
   pointer-events: none;
   background-color: #f3eb09;
   color: #000000;
   font-weight: 500;
   margin-bottom: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .delete {
@@ -40,12 +34,20 @@ label.add {
   margin-bottom: 15px;
 }
 
+.filtred {
+  display: none !important;
+}
+
 form hr {
   color: #ffffff;
 }
 
-li.list-group-items:hover {
-  animation: shake 0.5s;
+li.list-group-item {
+  display: flex;
+  justify-content: space-between;
+}
+li.list-group-item:hover {
+  animation: shake 0.8s;
   animation-iteration-count: infinite;
 }
 
